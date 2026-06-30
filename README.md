@@ -2,24 +2,25 @@
 
 Aerospace Engineering student at Concordia University, specializing in Structures and Materials. Incoming Experimental Parts Methods Agent co-op at Pratt & Whitney Canada.
 
-This portfolio contains selected engineering projects, CAD work, programming projects, academic drawings, and technical documentation developed throughout my aerospace engineering studies.
+This portfolio contains selected engineering projects, CAD work, programming projects, simulations, academic drawings, and technical documentation developed throughout my aerospace engineering studies.
 
 ## About Me
 
-I am an Aerospace Engineering student at Concordia University with interests in aircraft structures, materials, mechanical design, propulsion, CAD, and hands-on technical work.
+I am an Aerospace Engineering student at Concordia University with interests in aircraft structures, materials, mechanical design, propulsion, CAD, programming, and hands-on technical work.
 
-I am currently building my engineering portfolio through Arduino systems, C++ engineering calculations, SolidWorks assemblies, AutoCAD drawings, and technical documentation. My goal is to keep developing practical technical skills that connect engineering theory with physical design, programming, and analysis.
+I am currently building my engineering portfolio through Arduino systems, Python simulations, C++ engineering calculations, SolidWorks assemblies, AutoCAD drawings, and technical documentation. My goal is to keep developing practical technical skills that connect engineering theory with physical design, programming, data analysis, and simulation.
 
 Before engineering, much of my development came through Brazilian Jiu-Jitsu as an international-level athlete and coach. Competing and coaching at a high level shaped the way I approach technical work: disciplined, analytical, detail-oriented, and composed under pressure.
 
-This portfolio documents my progress as I continue developing stronger engineering, programming, design, and analysis skills.
+This portfolio documents my progress as I continue developing stronger engineering, programming, design, simulation, and analysis skills.
 
 ## Technical Skills
 
 - **CAD:** SolidWorks, AutoCAD, CATIA V5
-- **Programming:** C++, Arduino IDE, Processing
+- **Programming:** Python, C++, Arduino IDE, Processing
+- **Data & Simulation:** Matplotlib, CSV data analysis, numerical time-stepping, sensor data processing
 - **Engineering:** mechanics of materials, thermodynamics, fluid mechanics, technical drawing
-- **Hardware:** Arduino systems, sensors, servo motors, computer assembly, BIOS configuration, hardware diagnostics
+- **Hardware:** Arduino systems, ultrasonic sensors, servo motors, breadboarding, computer assembly, BIOS configuration, hardware diagnostics
 - **Languages:** English, French, Romanian
 
 ## Featured Projects
@@ -32,6 +33,28 @@ Built an Arduino-based radar-style detection system using an HC-SR04 ultrasonic 
 **Skills:** embedded systems, ultrasonic sensing, servo control, serial communication, object detection, real-time visualization
 
 [View Project](./Arduino-Projects/Radar-Detection-System)
+
+---
+
+### Rocket Trajectory Simulator with Drag
+
+Created a Python simulation of two-dimensional projectile motion with aerodynamic drag. The program calculates flight time, range, maximum height, velocity history, drag force, and generates trajectory and velocity plots.
+
+**Tools:** Python, Matplotlib, CSV  
+**Skills:** numerical simulation, aerospace physics, drag modeling, data visualization, CSV data export
+
+[View Project](./Python-Projects/Rocket-Trajectory-Simulator)
+
+---
+
+### Arduino Radar Data Analyzer
+
+Created a Python data analysis tool for Arduino radar sensor data. The program reads angle-distance measurements, identifies object detections, calculates summary statistics, exports a detection summary, and generates a distance-versus-angle plot.
+
+**Tools:** Python, Matplotlib, CSV  
+**Skills:** sensor data processing, data visualization, object detection logic, hardware/software integration
+
+[View Project](./Python-Projects/Arduino-Radar-Data-Analyzer)
 
 ---
 
