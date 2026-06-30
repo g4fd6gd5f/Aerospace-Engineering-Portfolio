@@ -38,10 +38,10 @@ The system:
 
 ## Files
 
-- [`radar_scanner.ino`](./radar_scanner.ino) — Arduino code for controlling the servo and ultrasonic sensor
-- [`radar_display_processing.pde`](./radar_display_processing.pde) — Processing code for the radar visualization
-- [`radar_setup_photo.png`](./radar_setup_photo.png) — photo of the physical setup
-- [`radar_demo_screenshot.png`](./radar_demo_screenshot.png) — screenshot of the radar display
+- [`radar_scanner.ino`](./radar_scanner.ino) — Arduino IDE C++ code used to control the servo motor, trigger the ultrasonic sensor, calculate distance, and send angle-distance data through serial communication.
+- [`radar_display_processing.pde`](./radar_display_processing.pde) — Processing code used to create the circular radar-style display interface and visualize real-time sensor data.
+- [`radar_picture.jpg`](./radar_picture.jpg) — photo of the physical Arduino radar setup.
+- [`radar_video.mp4`](./radar_video.mp4) — video demonstration of the radar system operating.
 
 ## How It Works
 
