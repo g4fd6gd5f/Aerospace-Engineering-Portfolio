@@ -6,7 +6,9 @@ This folder contains selected C++ programming assignments demonstrating control 
 
 ### Pattern Box Generator
 
-A console-based C++ program that asks the user for a number of rows and columns, then prints a bordered text box using letters. The program limits the row count to 26 so the output stays within lowercase alphabet characters.
+A console-based C++ program that asks the user for a number of rows and columns, then prints a bordered text box using letters.
+
+The program limits the number of rows to 26 so the output remains within lowercase alphabet characters.
 
 **Concepts demonstrated:**
 - User input
@@ -15,13 +17,18 @@ A console-based C++ program that asks the user for a number of rows and columns,
 - Character manipulation
 - Console output formatting
 
-**File:** `assignment1.cpp`
+**File:** [`pattern_box_generator.cpp`](./pattern_box_generator.cpp)
 
 ---
 
 ### Sudoku Validator
 
-A C++ program that checks whether a 9x9 Sudoku grid satisfies row, column, and 3x3 region requirements. The program uses separate functions to validate rows, columns, and regions.
+A C++ program that checks whether a 9x9 Sudoku grid satisfies row, column, and 3x3 region requirements.
+
+The program uses separate validation functions for:
+- Rows
+- Columns
+- 3x3 regions
 
 **Concepts demonstrated:**
 - 2D arrays
@@ -31,4 +38,4 @@ A C++ program that checks whether a 9x9 Sudoku grid satisfies row, column, and 3
 - Boolean logic
 - Algorithmic validation
 
-**File:** `assignment2.cpp`
+**File:** [`sudoku_validator.cpp`](./sudoku_validator.cpp)
