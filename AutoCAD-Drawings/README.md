@@ -16,18 +16,19 @@ A dimensioned technical drawing showing multiple orthographic views and an isome
 - Drawing layout
 - Technical communication
 
-**File:** `VladDragomir_40343899.pdf`
+**File:** [`autocad_mechanical_part_drawing.pdf`](./autocad_mechanical_part_drawing.pdf)
 
 ---
 
-### Mechanical Drawing Practice
+### Dimensioning Practice Drawing
 
 A dimensioned AutoCAD drawing showing 2D technical geometry, radii, holes, and projected views.
 
 **Skills demonstrated:**
 - 2D drafting
-- Radius and diameter dimensioning
+- Radius dimensioning
+- Diameter dimensioning
 - View alignment
 - Engineering drawing standards
 
-**File:** `Drawing1-Model.pdf`
+**File:** [`autocad_dimensioning_practice_drawing.pdf`](./autocad_dimensioning_practice_drawing.pdf)
