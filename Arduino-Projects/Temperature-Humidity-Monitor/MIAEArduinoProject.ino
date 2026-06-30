@@ -1,0 +1,144 @@
+#include <LiquidCrystal.h>
+#include <DHT.h>
+
+// LCD connected to pins 8,9,10,11,12,13
+LiquidCrystal lcd(8, 9, 10, 11, 12, 13);
+
+// DHT11 temperature and humidity sensor on pin 2
+DHT dht(2, DHT11);
+
+// LED pins
+const int greenLED = 3;
+const int yellowLED = 4;
+const int redLED = 5;
+
+// buzzer pin
+const int buzzerPin = 6;
+
+// temperature thresholds in Celsius
+const float warmTemp = 27.0;
+const float hotTemp = 32.0;
+
+// humidity thresholds in percent
+const float midHumidity = 50.0;
+const float highHumidity = 75.0;
+
+// function to turn off all LEDs
+void clearLEDs() {
+  digitalWrite(greenLED, LOW);
+  digitalWrite(yellowLED, LOW);
+  digitalWrite(redLED, LOW);
+}
+
+// function to get danger level (0=ok, 1=caution, 2=danger)
+int getDangerLevel(float temp, float hum) {
+  int tempLevel = 0;
+  int humLevel = 0;
+
+  // check temperature level
+  if(temp >= hotTemp) tempLevel = 2;
+  else if(temp >= warmTemp) tempLevel = 1;
+
+  // check humidity level
+  if(hum >= highHumidity) humLevel = 2;
+  else if(hum >= midHumidity) humLevel = 1;
+
+  // return the worse of the two
+  return max(tempLevel, humLevel);
+}
+
+// function to set LEDs based on danger level
+void updateLEDs(int level) {
+  clearLEDs();
+  if(level == 2) {
+    digitalWrite(redLED, HIGH);
+  } else if(level == 1) {
+    digitalWrite(yellowLED, HIGH);
+  } else {
+    digitalWrite(greenLED, HIGH);
+  }
+}
+
+// function to control buzzer alarm
+void checkAlarm(int level) {
+  if(level == 2) {
+    digitalWrite(buzzerPin, HIGH);
+    delay(100);
+    digitalWrite(buzzerPin, LOW);
+  } else {
+    digitalWrite(buzzerPin, LOW);
+  }
+}
+
+// function to display temperature and humidity on LCD
+void updateDisplay(float temp, float hum) {
+  lcd.clear();
+  lcd.setCursor(0, 0);
+  lcd.print("Temp: ");
+  lcd.print(temp, 1);
+  lcd.print(" C");
+
+  lcd.setCursor(0, 1);
+  lcd.print("Hum:  ");
+  lcd.print(hum, 1);
+  lcd.print(" %");
+}
+
+void setup() {
+  Serial.begin(115200);
+  dht.begin();
+  lcd.begin(16, 2);
+
+  // configure output pins
+  pinMode(greenLED, OUTPUT);
+  pinMode(yellowLED, OUTPUT);
+  pinMode(redLED, OUTPUT);
+  pinMode(buzzerPin, OUTPUT);
+
+  // start with everything off
+  clearLEDs();
+  digitalWrite(buzzerPin, LOW);
+
+  // startup message
+  lcd.setCursor(0, 0);
+  lcd.print("Climate Monitor");
+  lcd.setCursor(0, 1);
+  lcd.print("Starting...");
+  Serial.println("Climate Monitor Started");
+  delay(2000);
+}
+
+void loop() {
+  // read sensor data
+  float temp = dht.readTemperature();
+  float hum = dht.readHumidity();
+
+  // check for sensor error
+  if(isnan(temp) || isnan(hum)) {
+    lcd.clear();
+    lcd.setCursor(0, 0);
+    lcd.print("Sensor error!");
+    Serial.println("Sensor error!");
+    delay(2000);
+    return;
+  }
+
+  // get danger level from both readings
+  int level = getDangerLevel(temp, hum);
+
+  // update all outputs
+  updateDisplay(temp, hum);
+  updateLEDs(level);
+  checkAlarm(level);
+
+  // log data to serial monitor
+  float t = millis() / 1000.0;
+  Serial.print(t);
+  Serial.print(",");
+  Serial.print(temp);
+  Serial.print(",");
+  Serial.println(hum);
+
+  // wait 2 seconds before next reading
+  delay(2000);
+}
