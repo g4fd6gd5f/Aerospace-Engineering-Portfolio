@@ -2,7 +2,7 @@
 
 This Arduino project monitors temperature and humidity, displays live readings, and uses warning indicators to show environmental conditions.
 
-## Project Overview
+## Project Overview 
 
 The system reads temperature and humidity values using a sensor, displays the values on an LCD screen, and uses LEDs and/or a buzzer to indicate warning levels based on preset thresholds.
 
