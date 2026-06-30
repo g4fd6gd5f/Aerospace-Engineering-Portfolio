@@ -1,18 +1,33 @@
-# AutoCAD Drawings
+# AutoCAD Technical Drawings
 
-This folder contains selected AutoCAD technical drawings and engineering drafting work.
+This folder contains selected AutoCAD technical drawings completed as part of mechanical engineering drawing coursework.
 
-## Suggested contents
+## Drawings
 
-- DWG files
-- PDF exports
-- Screenshots of drawings
-- Short explanations of each drawing
+### Mechanical Part Drawing
 
-## Skills Demonstrated
+A dimensioned technical drawing showing multiple orthographic views and an isometric view of a mechanical component.
 
+**Skills demonstrated:**
 - Orthographic projection
-- Section views
+- Isometric representation
 - Dimensioning
-- Drawing standards
+- Hidden lines
+- Drawing layout
 - Technical communication
+
+**File:** `VladDragomir_40343899.pdf`
+
+---
+
+### Mechanical Drawing Practice
+
+A dimensioned AutoCAD drawing showing 2D technical geometry, radii, holes, and projected views.
+
+**Skills demonstrated:**
+- 2D drafting
+- Radius and diameter dimensioning
+- View alignment
+- Engineering drawing standards
+
+**File:** `Drawing1-Model.pdf`
